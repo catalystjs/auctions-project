@@ -1,0 +1,42 @@
+@model beltexam.Models.Bid
+
+@{
+    ViewData["Title"] = "Auctions Bid Page";
+    ViewData["NavTitle"] = Model.Auction.Product;
+    ViewData["NavTitleSub"] = "Created by: " + Model.Auction.User.name();
+}
+
+<div class="bid-page">
+    <p>Time Remaining: @Model.Auction.TimeSpanRemaining()</p>
+    <p class="italic">@Model.Auction.Description</p>
+    <div class="top-bid-box">
+        @if (ViewBag.topbid != null)
+        {
+            <p>Current Highest Bid: $@ViewBag.topbid.UserBid</p>
+            <p>By: @ViewBag.topbid.User.name()</p>
+        }
+        else
+        {
+            <p>Current Highest Bidder: No Bids</p>
+            <p>Current Auction Start Price: @Model.Auction.StartPrice</p>
+        }
+    </div>
+    <form asp-action="Bid" class="add-bid-form">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="UserId" />
+        <input type="hidden" asp-for="AuctionId" />
+        <div class="form-group">
+            <label asp-for="UserBid"></label>
+            <div>
+                $<input asp-for="UserBid" value="" placeholder="Your bid goes here..." />
+                <span asp-validation-for="UserBid" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                <input class="create-bid-button" type="submit" value="Bid!!" />
+            </div>
+        </div>
+    </form>
+</div>

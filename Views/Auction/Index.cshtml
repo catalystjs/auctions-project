@@ -1,0 +1,54 @@
+@model IEnumerable<beltexam.Models.Auction>
+
+@{
+    ViewData["Title"] = "Auctions Dashboard";
+    ViewData["NavTitle"] = "Current Auctions";
+}
+<div class=auctions-page>
+    <table class="auctions-table">
+        <tr>
+            <th class="artist-header">Product</th>
+            <th class="title-header">Seller</th>
+            <th class="counter-header">Top Bid</th>
+            <th class="remaining-header">Time Remaining</th>
+            <th class="playlist-header">Remove</th>
+        </tr>
+        @if (Model != null)
+        {
+            // Let's iterate through the collection of auctions
+            foreach (var playlist in Model)
+            {
+                // Set the topbid
+                var topbidobject = playlist.GetTopBid();
+                float topbid = playlist.StartPrice;
+                if (topbidobject != null)
+                {
+                    topbid = topbidobject.UserBid;
+                }
+                // Set the Timespan of the remaining
+                string remaining = playlist.TimeSpanRemaining();
+                if (remaining != null)
+                {
+                    <tr>
+                        <td class="artist-data"><a href="/auction/@playlist.Id/bid/add">@playlist.Product</a></td>
+                        <td class="title-data">@playlist.User.name()</td>
+                        <td class="title-data">$@topbid</td>
+                        <td class="counter-data">@remaining</td>
+                        @if (playlist.User.Id == ViewBag.userid)
+                        {
+                            <td class="playlist-data"><a class="playlist-button" href="/auction/delete/@playlist.Id">Delete</a></td>
+                        }
+                        else
+                        {
+                            <td class="playlist-data"></td>
+                        }
+                    </tr>
+                }
+            }
+        }
+    </table>
+    <div class="table-footer">
+        <a class="auction-button" href="/auction/add">New Auction</a>
+        <span class="user-wallet">Your Current Wallet: $@ViewBag.user_wallet</span>
+    </div>
+</div>

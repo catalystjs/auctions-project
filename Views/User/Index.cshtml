@@ -1,0 +1,13 @@
+@model beltexam.Models.Wrapper
+
+@{
+    ViewData["Title"] = "User Framework";
+}
+<div class=index-box>
+    <div class="register-box">
+        @Html.Partial("Register",Model.User)
+    </div>
+    <div class="login-box">
+        @Html.Partial("Login",Model.Login)
+    </div>
+</div>

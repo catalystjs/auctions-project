@@ -1,0 +1,151 @@
+/*Write all of your CSS here*/
+* {
+    box-sizing: border-box;
+}
+
+.index-box {
+    width: 100%;
+}
+
+.index-box .register-box {
+    padding: 2%;
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+}
+
+.index-box .login-box {
+    padding: 2%;
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+}
+
+.text-danger {
+    color: red;
+}
+
+.navbar h2 {
+    display: inline-block;
+}
+
+.navbar .right-side-box {
+    width: 25%;
+    display: inline-block;
+    float: right;
+    clear: all;
+    vertical-align: middle;
+}
+
+.navbar .logout-button,
+.navbar .home-button {
+    margin-left: 3%;
+}
+
+.navbar .indent {
+    margin-left: 3%;
+}
+
+.auctions-page .auction-button {
+    display: inline-block;
+    padding: 1px 2px;
+    font-size: .75em;
+    text-decoration: none;
+    color: black;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    box-shadow: 3px 3px 3px black;
+}
+
+.auctions-page .table-footer {
+    width: 60%;
+    margin-top: 2%;
+}
+
+.auctions-page .user-wallet {
+    float: right;
+    clear: all;
+}
+
+.auctions-page .auctions-table {
+    border-collapse: collapse;
+    width: 60%;
+    border: 2px solid black;
+}
+
+.auctions-page .auctions-table tbody tr:nth-child(odd) {
+   background-color: #ccc;
+}
+
+.auctions-page .auctions-table th {
+    padding: 0% .5% .5% .5%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.auctions-page .auctions-table td {
+    padding: .75% .5% .75% .5%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.auctions-page .auctions-table .artist-header {
+    width: 300px;
+}
+
+.auctions-page .auctions-table .title-header {
+    width: 200px;
+}
+
+.auctions-page .auctions-table .counter-header {
+    width: 200px;
+}
+
+.auctions-page .auctions-table .remaining-header {
+    width: 200px;
+}
+
+.auctions-page .auctions-table .playlist-header {
+    width: 200px;
+}
+
+.auctions-page .auctions-table th {
+    text-align: left;
+}
+
+.add-auction-page {
+    width: 75%;
+}
+
+.add-auction-page .description {
+    width: 30%;
+    resize: none;
+}
+
+.add-auction-page .product-input {
+    width: 30%;
+}
+
+.register-page .register-button,
+.login-page .login-button,
+.add-auction-page .create-auction-button,
+.bid-page .create-bid-button {
+    margin-top: 1%;
+    box-shadow: 3px 3px 3px black;
+}
+
+.bid-page .italic {
+    font-style: italic;
+}
+
+.bid-page .top-bid-box {
+    display: inline-block;
+    width: 25%;
+}
+
+.bid-page .add-bid-form {
+    display: inline-block;
+    width: 40%;
+}

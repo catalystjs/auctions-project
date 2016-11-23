@@ -1,0 +1,59 @@
+@model beltexam.Models.User
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2>Registration</h2>
+
+<form asp-action="Register" class="register-page">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="First_name"></label>
+        <div>
+            <input asp-for="First_name" />
+            <span asp-validation-for="First_name" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Last_name"></label>
+        <div>
+            <input asp-for="Last_name" />
+            <span asp-validation-for="Last_name" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <div>
+            <input asp-for="Email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Birthday"></label>
+        <div>
+            <input asp-for="Birthday" />
+            <span asp-validation-for="Birthday" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <div>
+            <input asp-for="Password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Confirmpassword"></label>
+        <div>
+            <input asp-for="Confirmpassword" />
+            <span asp-validation-for="Confirmpassword" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div>
+            <input type="submit" value="Register" class="register-button" />
+        </div>
+    </div>
+</form>
